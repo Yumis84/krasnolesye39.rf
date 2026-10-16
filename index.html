@@ -13,7 +13,7 @@
 @media(max-width:600px){header{padding:30px 28px}.header-tools{gap:10px}.brand{font-size:8px;letter-spacing:.12em;gap:8px}.mark{width:27px}.skip,.sound{font-size:11px;gap:10px}.frame{inset:12px}main{margin:0 24px;min-height:320px}.kicker{font-size:8px;letter-spacing:.23em}.place h1{font-size:clamp(36px,10.6vw,64px)}footer{padding:22px 28px 28px;grid-template-columns:1fr;gap:18px}.transport{grid-row:1;width:min(260px,100%);justify-self:center}.location{text-align:center;font-size:8px}.edition{display:none}.forest{background-position:53% center}.museum p:last-child{font-size:12px}.hairline{margin:22px auto}.gate h1{font-size:clamp(44px,15vw,72px)}.gate p{font-size:18px}}
 @media(max-height:520px) and (min-width:601px){header{padding:20px 4.8vw}main{min-height:200px}.kicker{margin-bottom:12px}.place h1{font-size:70px}.museum h2{font-size:46px}.intro h2{font-size:42px}.hairline{margin:14px auto}footer{padding:12px 4.8vw 20px}.museum p:last-child{margin-top:12px}}
 @media(prefers-reduced-motion:reduce){.experience:not(.motion-enabled) *{animation:none!important;transition:none!important}.experience:not(.motion-enabled) .intro,.experience:not(.motion-enabled) .place{visibility:hidden}.experience:not(.motion-enabled) .museum{opacity:1}.experience:not(.motion-enabled) .forest{transform:none}.experience:not(.motion-enabled) .fog{opacity:.5}.experience:not(.motion-enabled) .track{display:none}}
-.experience.restarting *{animation:none!important}.controls{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.motion{color:#f3eedb;text-decoration:underline;text-underline-offset:4px}
+.experience.restarting *{animation:none!important}.controls{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.motion{color:#f3eedb;text-decoration:underline;text-underline-offset:4px}.destinations{grid-area:1/1;z-index:2;width:min(760px,100%);padding:clamp(24px,5vw,54px);text-align:center;background:#0b211dd9;border:1px solid #d4bc8366;box-shadow:0 24px 70px #06191399;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}.destinations h2{font:400 clamp(34px,5vw,64px)/1.08 Georgia,serif;margin:0}.destinations p{margin:18px 0 28px;color:#d9e1ce;line-height:1.55}.destination-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.destination-link{display:flex;min-height:64px;align-items:center;justify-content:center;padding:14px 18px;border:1px solid var(--gold);color:var(--ivory);font-size:14px;line-height:1.35;text-decoration:none;background:#d4bc8314}.destination-link:hover{background:#d4bc8338;color:#fff}.experience.choices-visible .chapter{opacity:0!important;visibility:hidden;pointer-events:none}.experience.choices-visible .destinations{opacity:1;visibility:visible;pointer-events:auto;transform:none}.experience.choices-visible .track i{transform:scaleX(1)!important}.experience.choices-visible .pause{display:none}.experience.choices-visible .motion{display:inline-block}
 
 .chapter.intro .small{font-size:clamp(14px,1.8vw,20px);letter-spacing:.04em;margin-top:28px;color:#e0e4d2}.chapter.place .subtitle{font:italic 400 clamp(19px,3.2vw,35px)/1.35 Georgia,serif;margin:28px 0 0}.chapter.museum .museum-description{font:clamp(14px,1.8vw,21px)/1.6 Arial,sans-serif;color:#e0e4d2;margin:30px 0 0}.chapter.museum .phrase{font-style:normal}.chapter.place .phrase{font-style:normal;font-size:clamp(44px,9vw,112px)}
 
@@ -26,23 +26,24 @@ header{position:relative;z-index:6}.gate{background:linear-gradient(#0b211d55,#1
 </style>
 <style>
 .chapter .phrase{font:italic 400 clamp(34px,5.5vw,78px)/1.16 Georgia,serif;letter-spacing:-.025em;margin:0;text-wrap:balance}.chapter .phrase-caption{font:11px/1.6 Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin:26px 0 0}.gate .open-button{min-width:210px;min-height:60px;font-size:14px;letter-spacing:.18em}.gate .gate-invitation{font-size:18px}.gate h1{font-size:clamp(42px,7vw,88px);line-height:1.08}.gate .gate-kicker{margin-bottom:20px}.chapter .kicker{margin-bottom:30px}
-@media(max-width:600px){.chapter .phrase{font-size:clamp(30px,8vw,46px)}.chapter .phrase-caption{font-size:9px;letter-spacing:.1em}.gate h1{font-size:clamp(38px,11vw,60px)}}
-@media(max-height:520px){.chapter .phrase{font-size:clamp(28px,5vw,46px)}.gate h1{font-size:40px}}
+@media(max-width:600px){.chapter .phrase{font-size:clamp(30px,8vw,46px)}.chapter .phrase-caption{font-size:9px;letter-spacing:.1em}.gate h1{font-size:clamp(38px,11vw,60px)}.destinations{padding:24px 18px}.destination-links{grid-template-columns:1fr}.destination-link{min-height:56px}}
+@media(max-height:520px){.chapter .phrase{font-size:clamp(28px,5vw,46px)}.gate h1{font-size:40px}.destinations{padding:14px 24px}.destinations h2{font-size:30px}.destinations p{margin:8px 0 12px;font-size:12px}.destinations .kicker{margin-bottom:8px}.destination-link{min-height:42px;padding:8px 12px}}
 </style>
-<noscript><style>#open,#sound,.gate-note{display:none}.gate{position:relative;order:2}.gate-inner{padding:40px 0}main,footer{display:none}</style></noscript>
+<noscript><style>.gate,.chapter,footer{display:none!important}main{display:grid}.destinations{opacity:1;visibility:visible;pointer-events:auto;transform:none}</style></noscript>
 </head>
 <body>
 <div class="experience" id="experience">
 <div class="landscape" aria-hidden="true"><div class="forest"></div><div class="rays"></div><div class="fog"></div><svg class="near" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><path d="M85 1000 116 0h45l-14 1000ZM138 300 0 155v-30l140 124ZM145 440 285 219l9 13-151 265ZM1460 1000 1428 0h61l45 1000ZM1460 330 1600 138v50l-127 219ZM1446 202 1314 54l-13 8 145 204Z"/></svg><div class="shade"></div></div>
 <div class="frame" aria-hidden="true"></div>
 <div class="gate" id="gate"><div class="gate-inner"><p class="gate-kicker">Краснолесье · Роминтская пуща</p><h1>Войти<br>в лес</h1><p class="gate-invitation">Ваше путешествие начинается здесь.</p><button class="open-button" id="open" type="button" aria-label="Вход — начать путешествие по Виштынецкому краю">Вход</button><span class="gate-note" id="gate-note">Десять секунд леса, света и звука.</span></div></div>
-<header><div class="brand"><img class="museum-logo" src="vishtynets-logo.svg?v=ebe40fd" alt="Виштынецкий экомузей. Краснолесье, Роминтская пуща" width="124" height="67"></div><div class="header-tools"><button class="sound" id="sound" type="button" aria-pressed="true">Звук включён</button><a class="skip" href="https://vishtynets.ru/"><span id="skip-label">Перейти на сайт</span> <span aria-hidden="true">↗</span></a></div></header>
-<main aria-label="Краснолесье — приглашение в Виштынецкий экомузей"><p class="sr-only">Роминтская пуща. Краснолесье. Откройте природу, людей и истории Виштынецкого края. После заставки откроется сайт Виштынецкого экомузея.</p>
+<header><div class="brand"><img class="museum-logo" src="vishtynets-logo.svg?v=ebe40fd" alt="Виштынецкий экомузей. Краснолесье, Роминтская пуща" width="124" height="67"></div><div class="header-tools"><button class="sound" id="sound" type="button" aria-pressed="true">Звук включён</button><a class="skip" href="#destinations"><span id="skip-label">Выбрать направление</span> <span aria-hidden="true">→</span></a></div></header>
+<main aria-label="Краснолесье — выбор направления"><p class="sr-only">Роминтская пуща. Краснолесье. После заставки выберите Виштынецкий экомузей или гостевой дом. Автоматического перехода на другой сайт нет.</p>
 <section class="chapter intro" aria-hidden="true"><p class="kicker">01 / ПРОБУЖДЕНИЕ ЛЕСА</p><h2 class="phrase">У каждого леса<br>есть своя история.</h2><p class="small">Прислушайтесь к Роминтской пуще</p></section>
 <section class="chapter place" aria-hidden="true"><p class="kicker">02 / МЕСТО, КОТОРОЕ ОСТАЁТСЯ С ВАМИ</p><h2 class="phrase">Краснолесье</h2><p class="subtitle">Там, где природа хранит историю</p></section>
 <section class="chapter museum" aria-hidden="true"><p class="kicker">03 / ПРОДОЛЖИТЕ ПУТЕШЕСТВИЕ</p><h2 class="phrase">Виштынецкий<br>экомузей</h2><p class="museum-description">Откройте природу, людей и истории<br>Виштынецкого края.</p></section>
+<section class="destinations" id="destinations" aria-labelledby="destinations-title" aria-live="polite"><p class="kicker">КУДА ОТПРАВИТЬСЯ ДАЛЬШЕ</p><h2 id="destinations-title">Выберите направление</h2><p>Путешествие продолжится только после вашего выбора.</p><div class="destination-links"><a class="destination-link" href="https://vishtynets.ru/">Открыть Виштынецкий сайт</a><a class="destination-link" href="https://yumis84.github.io/guest-house-map/">Гостевой дом</a></div></section>
 </main>
-<footer><div class="location">Роминтская пуща<span>Калининградская область</span></div><div class="transport"><div class="status" id="status">На сайт музея через 10 секунд</div><div class="track" aria-hidden="true"><i></i></div><div class="controls"><button class="pause" id="pause" type="button" hidden>Приостановить переход</button><button class="pause motion" id="motion" type="button" hidden>Повторить анимацию</button></div></div><div class="edition">Природа. Память. Открытия.</div></footer>
+<footer><div class="location">Роминтская пуща<span>Калининградская область</span></div><div class="transport"><div class="status" id="status">Выбор направления через 10 секунд</div><div class="track" aria-hidden="true"><i></i></div><div class="controls"><button class="pause" id="pause" type="button" hidden>Приостановить анимацию</button><button class="pause motion" id="motion" type="button" hidden>Повторить анимацию</button></div></div><div class="edition">Природа. Память. Открытия.</div></footer>
 </div>
 <script>
 (() => {
@@ -55,8 +56,8 @@ header{position:relative;z-index:6}.gate{background:linear-gradient(#0b211d55,#1
   const pause = document.getElementById('pause');
   const motion = document.getElementById('motion');
   const skip = document.querySelector('.skip');
+  const destinations = document.getElementById('destinations');
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
-  const target = 'https://vishtynets.ru/';
   const DURATION_MS = 10000;
   let remaining = DURATION_MS, started = 0, timeout, interval;
   let active = false, paused = false, enabled = true, audioContext, master;
@@ -72,16 +73,22 @@ header{position:relative;z-index:6}.gate{background:linear-gradient(#0b211d55,#1
     if (audioContext) { try { audioContext[method]().catch(() => {}); } catch (_) {} }
   }
   function update() {
-    status.textContent = 'На сайт музея через ' + Math.ceil(left() / 1000) + ' сек.';
-    root.classList.toggle('leaving', left() < 250);
+    status.textContent = 'Выбор направления через ' + Math.ceil(left() / 1000) + ' сек.';
   }
-  function navigate() {
+  function showChoices(focusChoice = true) {
     cleanup();
-    location.replace(target);
+    active = false; paused = false;
+    root.classList.remove('paused', 'leaving');
+    root.classList.add('started', 'choices-visible');
+    gate.hidden = true; open.disabled = true; pause.hidden = true; motion.hidden = false;
+    document.getElementById('skip-label').textContent = 'Направления';
+    status.textContent = 'Выберите, куда отправиться дальше';
+    labelMotion();
+    if (focusChoice) destinations.querySelector('a').focus({preventScroll:true});
   }
   function run() {
     started = performance.now();
-    timeout = setTimeout(navigate, remaining);
+    timeout = setTimeout(showChoices, remaining);
     interval = setInterval(update, 100);
     update();
   }
@@ -131,25 +138,25 @@ header{position:relative;z-index:6}.gate{background:linear-gradient(#0b211d55,#1
     if (!active || paused === value) return;
     if (value) {
       remaining = left(); clearTimers(); paused = true;
-      root.classList.add('paused'); root.classList.remove('leaving');
-      audioState('suspend'); status.textContent = 'Переход приостановлен';
+      root.classList.add('paused');
+      audioState('suspend'); status.textContent = 'Анимация приостановлена';
       pause.textContent = 'Продолжить путешествие';
     } else {
       paused = false; root.classList.remove('paused');
-      audioState('resume'); pause.textContent = 'Приостановить переход'; run();
+      audioState('resume'); pause.textContent = 'Приостановить анимацию'; run();
     }
   }
   function begin(replay = false) {
     if (active && !replay) return;
     cleanup(); remaining = DURATION_MS; paused = false; active = true;
-    root.classList.remove('paused', 'leaving');
+    root.classList.remove('paused', 'leaving', 'choices-visible');
     root.classList.add('restarting');
     void root.offsetWidth;
     root.classList.remove('restarting'); root.classList.add('started');
     gate.hidden = true; open.disabled = true;
     pause.hidden = motion.hidden = false;
     document.getElementById('skip-label').textContent = 'Пропустить';
-    pause.textContent = 'Приостановить переход';
+    pause.textContent = 'Приостановить анимацию';
     labelMotion(); startSound(); run(); pause.focus({preventScroll:true});
   }
   open.addEventListener('click', () => begin());
@@ -165,12 +172,13 @@ header{position:relative;z-index:6}.gate{background:linear-gradient(#0b211d55,#1
     root.classList.remove('motion-enabled'); labelMotion();
     if (preference.matches) setPaused(true);
   });
-  if (preference.matches) document.getElementById('gate-note').textContent = 'Без движения: статичный вид и переход через 10 секунд. Можно сразу перейти на сайт.';
+  if (preference.matches) document.getElementById('gate-note').textContent = 'Без движения: статичный вид и выбор направления через 10 секунд. Можно сразу открыть направления.';
   document.addEventListener('visibilitychange', () => { if (document.hidden) setPaused(true); });
-  skip.addEventListener('click', cleanup);
+  skip.addEventListener('click', event => { event.preventDefault(); showChoices(); });
+  destinations.addEventListener('click', event => { if (event.target.closest('a')) cleanup(); });
   window.addEventListener('pagehide', cleanup);
   window.addEventListener('pageshow', event => {
-    if (event.persisted && active) { paused = true; root.classList.add('paused'); remaining = DURATION_MS; status.textContent = 'Переход приостановлен'; pause.textContent = 'Продолжить путешествие'; }
+    if (event.persisted && active) { paused = true; root.classList.add('paused'); remaining = DURATION_MS; status.textContent = 'Анимация приостановлена'; pause.textContent = 'Продолжить путешествие'; }
   });
 })();
 </script>
